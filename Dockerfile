@@ -16,4 +16,6 @@ RUN apt-get update \
   libbz2-dev liblzma-dev \
   && cd /usr/local/bin \
   && ln -s /usr/bin/python3 python \
-  && pip3 install --upgrade pip
+  && pip3 install --upgrade pip \
+  && pip3 install scipy==0.15.1 numpy==1.11.0 \
+  pandas==0.18.0 statsmodels==0.6.1 scikit-learn==0.16.1
