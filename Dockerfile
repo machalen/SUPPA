@@ -27,7 +27,7 @@ RUN unzip master.zip
 #Clean
 RUN rm master.zip
 
-#Add Hisat and samtools to the path variable
+#Add SUPPA to the path variable
 ENV PATH $PATH:/bin/SUPPA-master
 
 #Set wokingDir in home
