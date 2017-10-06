@@ -18,8 +18,6 @@ RUN apt-get update \
   && cd /usr/local/bin \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
-  
-ENTRYPOINT ["python3"]
 
 #Download SUPPA
 RUN wget https://github.com/comprna/SUPPA/archive/master.zip
