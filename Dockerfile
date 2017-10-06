@@ -30,3 +30,5 @@ RUN wget https://github.com/comprna/SUPPA/archive/master.zip
 RUN unzip master.zip
 #Clean
 RUN rm master.zip
+#Set wokingDir in /
+WORKDIR /
