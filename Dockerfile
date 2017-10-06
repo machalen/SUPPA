@@ -19,6 +19,8 @@ RUN apt-get update \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
 
+#Set wokingDir in home
+WORKDIR /
 #Download SUPPA
 RUN wget https://github.com/comprna/SUPPA/archive/master.zip
 #Unzip SUPPA
@@ -28,6 +30,3 @@ RUN rm master.zip
 
 #Add SUPPA to the path variable
 ENV PATH $PATH:/bin/SUPPA-master
-
-#Set wokingDir in home
-WORKDIR /
