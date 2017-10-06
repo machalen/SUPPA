@@ -19,14 +19,14 @@ RUN apt-get update \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
 
-#Set wokingDir in home
-WORKDIR /
+#Set wokingDir in /bin
+WORKDIR /bin
+#Download required packages for python3
+RUN pip3 install scipy==0.15.1 numpy==1.11.0
+RUN pip3 install pandas statsmodels scikit-learn
 #Download SUPPA
 RUN wget https://github.com/comprna/SUPPA/archive/master.zip
 #Unzip SUPPA
 RUN unzip master.zip
 #Clean
 RUN rm master.zip
-
-#Add SUPPA to the path variable
-ENV PATH $PATH:/bin/SUPPA-master
