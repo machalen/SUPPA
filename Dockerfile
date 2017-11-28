@@ -9,17 +9,19 @@ FROM ubuntu:14.04
 #Maintainer and author
 MAINTAINER Magdalena Arnal <marnal@imim.es>
 
+#Install required libs in ubuntu
 RUN apt-get update -y && apt-get install -y \
     wget git unzip bzip2 g++ make zlib1g-dev ncurses-dev default-jdk default-jre libncurses5-dev \
     libbz2-dev liblzma-dev
     
+#Install and configure python3
 RUN apt-get update \
   && apt-get install -y python3-pip python3-dev \
   && cd /usr/local/bin \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
 
-#Set wokingDir in /bin
+#INSTALL SUPPA
 WORKDIR /bin
 #Download required packages for python3
 RUN pip3 install scipy==0.15.1 numpy==1.11.0
@@ -30,5 +32,6 @@ RUN wget https://github.com/comprna/SUPPA/archive/master.zip
 RUN unzip master.zip
 #Clean
 RUN rm master.zip
+
 #Set wokingDir in /
 WORKDIR /
